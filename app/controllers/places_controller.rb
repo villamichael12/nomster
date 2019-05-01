@@ -1,8 +1,9 @@
 class PlacesController < ApplicationController
+	before_action :authenticate_user!, only: [:new, :create]
 
 		def index
 			#@places = Place.all
-			@places = Place.order("name").page(params[:page]).per_page(1)
+			@places = Place.order("name").page(params[:page]).per_page(5)
 		end
 
 		def new 
@@ -10,14 +11,14 @@ class PlacesController < ApplicationController
 		end
 
 		def create
-    Place.create(place_params)
-    redirect_to root_path
-  end
+    	current_user.places.create(place_params)
+    	redirect_to root_path
+  	end
 
-  private
+  	private
 
-  def place_params
-    params.require(:place).permit(:name, :description, :address)
-  end
+  	def place_params
+    	params.require(:place).permit(:name, :description, :address)
+  	end
 
 end
