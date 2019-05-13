@@ -48,8 +48,17 @@ body {
 }
 
 #map {
-	height: 300px;
-	width: 300px;
+	min-height: 250px;
 	overflow: scroll;
 	position: relative;
+}
+
+.buttons {
+	position: absolute;
+	bottom: 0;
+	right: 15px;
+}
+
+.clear {
+	clear: both;
 }
