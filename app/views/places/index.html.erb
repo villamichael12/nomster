@@ -4,7 +4,7 @@
     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
   </ol>
-  <div class="carousel-inner" role="listbox">
+  <div class="carousel-inner col-10 offset-1" role="listbox">
     <div class="carousel-item active">
       <%= image_tag 'slider1.jpg', class: 'img-fluid' %>
       <div class="carousel-caption d-none d-md-block">
@@ -36,13 +36,13 @@
 <% @places.each do |place| %>
  
   <div class="booyah-box col-10 offset-1">
-     <h1><%= link_to place.name, place_path(place) %></h1><br />
-    <i><%= place.address %></i><br />
-    <p><%= place.description %></p><br />
+  <h1><%= link_to place.name, place_path(place) %></h1><br />
+  <i><%= place.address %></i><br />
+  <p><%= place.description %></p><br />
 
-    <% if place.user.present? %>
-    	<small><%= place.user.email %></small>
-    	<% end %>
+  <% if place.user.present? %>
+    <small><%= place.user.email %></small>
+  <% end %>
   
 
   <% if place.comments.present? %>
