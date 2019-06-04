@@ -10,6 +10,8 @@ ActionMailer::Base.smtp_settings = {
     enable_starttls_auto: true
   }
 
+  
+
   config.action_mailer.default_url_options = { host: 'nomster-michaelv.herokuapp.com' }
   # Settings specified here will take precedence over those in config/application.rb.
 

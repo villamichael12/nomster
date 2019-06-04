@@ -1,0 +1,16 @@
+<div class="photo" id="<%= photo.id %>">
+  <div class="front">
+    <%= link_to photo, class: 'pic-link' do %>
+      <%= image_tag photo.avatar.url(:square) %>
+    <% end %>
+  </div>
+
+  <div class="back">
+    <span class="photo-name"><%= photo.name %></span>
+    <div class="actions">
+      <%= link_to 'Show', photo %>
+      <%= link_to 'Edit', edit_photo_path(photo) %>
+      <%= link_to 'Delete', photo, confirm: 'Are you sure you want to delete a photo?', method: :delete, class: 'destroy' %>
+    </div>
+  </div>
+</div>
