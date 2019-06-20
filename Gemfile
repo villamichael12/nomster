@@ -76,3 +76,4 @@ gem "font-awesome-rails"
 gem 'geocoder'
 gem 'figaro'
 gem 'carrierwave', '~> 1.0'
+gem 'paperclip', '~> 6.0.0'
